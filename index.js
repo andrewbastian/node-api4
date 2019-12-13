@@ -12,6 +12,11 @@ server.get("/", (req, res) => {
     res.json({
         message: "Welcome to our API"
     })
+            .catch(error => {
+            res.status(500).json({
+                errorMessage: "The users information could not be retrieved."
+            })
+        })
 })
 
 //get all Users
